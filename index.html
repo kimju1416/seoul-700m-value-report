@@ -50,11 +50,20 @@
     .rank{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#1f2933;color:#fff;font-size:12px;font-weight:800}
     .bar-row{display:grid;grid-template-columns:210px 1fr 90px;gap:12px;align-items:center;margin:12px 0;font-size:14px}
     .bar{height:12px;border-radius:999px;background:#ece8e2;overflow:hidden}.bar span{display:block;height:100%;background:var(--green);border-radius:999px}
+    .research-note{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
+    .opinion{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding:13px 0}
+    .opinion:last-child{border-bottom:0}.opinion strong{font-size:16px}.grade{font-size:22px;font-weight:850;color:#111827;white-space:nowrap}
+    .chart{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--soft-shadow)}
+    .chart-row{display:grid;grid-template-columns:170px 1fr 96px;gap:12px;align-items:center;margin:15px 0}
+    .chart-label{font-size:14px;font-weight:760}.track{height:24px;background:#edf0eb;border-radius:6px;overflow:hidden}
+    .fill{height:100%;display:block;background:linear-gradient(90deg,#c2413b,#a16207);border-radius:6px}.fill.green{background:linear-gradient(90deg,#167a5b,#2563eb)}.fill.gray{background:#c7cec7}
+    .axis{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:8px}
+    .matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.matrix .card{padding:16px}.metric{font-size:24px;font-weight:850;display:block;line-height:1.1}
     .quote{border-left:3px solid #c9c2b8;padding-left:16px;color:#555a60;font-size:18px;margin:20px 0}
     .check{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
     .check:last-child{border-bottom:0}.box{width:20px;height:20px;border:1.5px solid #b8b2aa;border-radius:5px;background:#fff;margin-top:3px}
     footer{color:var(--muted);font-size:13px;margin-top:36px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}
-    @media(max-width:840px){.grid,.grid.two,.grid.four{grid-template-columns:1fr}.bar-row{grid-template-columns:1fr;gap:5px}main{width:min(100% - 24px,1040px);margin-top:-72px}.hero{padding:20px}.cover{height:270px}}
+    @media(max-width:840px){.grid,.grid.two,.grid.four,.research-note,.matrix{grid-template-columns:1fr}.bar-row,.chart-row{grid-template-columns:1fr;gap:5px}main{width:min(100% - 24px,1040px);margin-top:-72px}.hero{padding:20px}.cover{height:270px}}
   </style>
 </head>
 <body>
@@ -73,6 +82,8 @@
       </div>
       <nav class="jump" aria-label="페이지 이동">
         <a href="#drop">낙폭 검산</a>
+        <a href="#research">투자의견</a>
+        <a href="#chart">그래프</a>
         <a href="#ranking">최종 순위</a>
         <a href="#score">별점표</a>
         <a href="#area">면적 랭킹</a>
@@ -89,6 +100,38 @@
       <div class="card stat-card"><div class="label">7억 이하 84㎡+</div><span class="big">215건</span><div class="small">생각보다 많습니다</div></div>
     </section>
 
+    <section id="research">
+      <h2>Investment View: 7억 이하 낙폭 매수 후보</h2>
+      <div class="research-note">
+        <div class="card">
+          <div class="opinion">
+            <div><strong>Top Pick</strong><br><span class="small">중화동 동양엔파트: 고점권 9.6억 대비 최근 6.5~6.9억. 낙폭과 회복 논리가 가장 선명합니다.</span></div>
+            <span class="grade">BUY</span>
+          </div>
+          <div class="opinion">
+            <div><strong>Deep Value</strong><br><span class="small">시흥동 벽산: 단지 전체 낙폭은 가장 크지만, 언덕·교통·구축 리스크 때문에 가격 검증형 접근이 필요합니다.</span></div>
+            <span class="grade">SPEC BUY</span>
+          </div>
+          <div class="opinion">
+            <div><strong>Quality Watch</strong><br><span class="small">휘경제이스카이: 입지·연식은 좋지만 고점 대비 빠진 물건은 아닙니다. 낙폭 매수 전략에서는 관찰 후보입니다.</span></div>
+            <span class="grade">WATCH</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>분석 프레임</h3>
+          <p>기업 분석처럼 보면 핵심은 PER이 아니라 <strong>고점 대비 할인율</strong>, <strong>할인의 이유</strong>, <strong>회복 촉매</strong>, <strong>출구 유동성</strong>입니다.</p>
+          <p class="small">할인율만 크면 함정일 수 있고, 입지만 좋으면 이미 가격에 반영됐을 수 있습니다. 이번 리포트는 둘을 분리해서 봅니다.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="matrix">
+      <div class="card"><div class="label">동양엔파트 낙폭</div><span class="metric">-28~-32%</span><div class="small">9.6억 고점권 대비 6.5~6.9억</div></div>
+      <div class="card"><div class="label">벽산 114㎡ 낙폭</div><span class="metric">-23.5%</span><div class="small">7.75억 대비 5.68억 기준</div></div>
+      <div class="card"><div class="label">벽산 단지 전체</div><span class="metric">-52.9%</span><div class="small">면적 혼합 통계, 참고용</div></div>
+      <div class="card"><div class="label">휘경제이스카이</div><span class="metric">+4.7%</span><div class="small">최근가가 고점권보다 높음</div></div>
+    </section>
+
     <section id="ranking">
       <div class="callout red">
         <div>🔥</div>
@@ -96,7 +139,7 @@
       </div>
       <div class="callout blue">
         <div>🔎</div>
-        <div><strong>결론 먼저</strong> 낙폭을 우선하면 1순위는 <strong>금천구 시흥동 벽산</strong>, 2순위는 <strong>중랑구 중화동 동양엔파트</strong>, 3순위는 <strong>강동구 길동 한일시티타워</strong>입니다. 휘경제이스카이는 조건은 좋지만 “많이 떨어진 집” 기준에서는 1순위가 아닙니다.</div>
+        <div><strong>결론 먼저</strong> 순수 낙폭+회복 가능성은 <strong>중랑구 중화동 동양엔파트</strong>, 역발상 딥밸류는 <strong>금천구 시흥동 벽산</strong>, 넓은 면적 안전마진은 <strong>강동구 길동 한일시티타워</strong>입니다. 휘경제이스카이는 조건은 좋지만 “많이 떨어진 집” 기준에서는 1순위가 아닙니다.</div>
       </div>
     </section>
 
@@ -110,21 +153,21 @@
           <tbody>
             <tr>
               <td><strong>금천구 시흥동 벽산</strong><br><span class="tag red">낙폭 1순위 후보</span></td>
-              <td><strong>단지 전체 기준 최대 -52.9%</strong></td>
-              <td>2021.12~2022.02 최고 7.75억, 2026.04~06 최저 3.65억. 최근 114㎡ 거래도 5.68억 포착.</td>
-              <td>대단지·브랜드·공원성은 강하지만, 언덕·교통 약점 때문에 크게 할인된 후보입니다. 할인폭 자체는 가장 큽니다.</td>
-              <td>면적 혼합 통계라 같은 평형 최고가와 최근가를 현장/등기로 재확인해야 합니다.</td>
+              <td><strong>매수 판단용 -23.5% / 참고용 -52.9%</strong></td>
+              <td>고점권 최고 7.75억 대비 114㎡ 최근 5.68억은 -2.07억, -23.5%. 단지 전체 최저 3.65억까지 보면 -52.9%.</td>
+              <td>대단지·브랜드·공원성은 강하지만, 언덕·교통 약점 때문에 할인된 후보입니다. 낙폭은 크지만 가격이 싼 이유도 명확합니다.</td>
+              <td>단지 전체 -52.9%는 면적 혼합 통계라 헤드라인으로만 사용. 같은 평형 고점과 최근가 재확인 필수.</td>
             </tr>
             <tr>
               <td><strong>중랑구 중화동 동양엔파트</strong><br><span class="tag green">낙폭+회복 균형</span></td>
-              <td><strong>9억대 고점권 → 6억대 후반</strong></td>
+              <td><strong>-2.7~-3.1억 / -28.1~-32.3%</strong></td>
               <td>2021.12~2022.02 동양엔파트2차 최고 9.6억, 최근 84㎡대 6.5~6.9억 후보.</td>
-              <td>낙폭이 있으면서 역 접근성과 생활권이 살아 있습니다. “떨어진 이유”보다 “다시 설명 가능한 가격” 쪽이 큽니다.</td>
+              <td>낙폭이 있으면서 역 접근성과 생활권이 살아 있습니다. 순수 낙폭과 회복 논리의 균형은 이 후보가 가장 좋습니다.</td>
               <td>동양엔파트/2차 명칭과 동·층별 같은 평형 비교 필요.</td>
             </tr>
             <tr>
               <td><strong>동대문구 휘경제이스카이</strong><br><span class="tag yellow">낙폭 매수 아님</span></td>
-              <td><strong>최근가가 고점권보다 높음</strong></td>
+              <td><strong>하락 아님: +0.3억 / +4.7%</strong></td>
               <td>MCP 검산: 2021.12~2022.02 최고 6.4억, 2026.04~06 최저 6.7억.</td>
               <td>입지·연식 조합은 좋지만, “많이 떨어진 집을 산다”는 전략에는 맞지 않습니다. 그래서 순위에서 내렸습니다.</td>
               <td>실거래 표본이 적어 보조 후보로만 유지.</td>
@@ -135,8 +178,36 @@
       <p class="small">낙폭은 같은 단지 안에서도 면적·동·층·수리 상태에 따라 크게 달라집니다. 여기서는 MCP 실거래로 방향성을 잡고, 최종 매수 전 같은 평형 실거래와 등기 여부를 다시 확인하는 방식이 맞습니다.</p>
     </section>
 
+    <section id="chart">
+      <h2>고점 대비 하락률 그래프</h2>
+      <div class="chart">
+        <div class="chart-row">
+          <div class="chart-label">동양엔파트</div>
+          <div class="track"><span class="fill green" style="width:100%"></span></div>
+          <strong>-32.3%</strong>
+        </div>
+        <div class="chart-row">
+          <div class="chart-label">시흥동 벽산 114㎡</div>
+          <div class="track"><span class="fill" style="width:73%"></span></div>
+          <strong>-23.5%</strong>
+        </div>
+        <div class="chart-row">
+          <div class="chart-label">길동 한일시티타워</div>
+          <div class="track"><span class="fill gray" style="width:18%"></span></div>
+          <strong>자료 부족</strong>
+        </div>
+        <div class="chart-row">
+          <div class="chart-label">휘경제이스카이</div>
+          <div class="track"><span class="fill gray" style="width:4%"></span></div>
+          <strong>+4.7%</strong>
+        </div>
+        <div class="axis"><span>0%</span><span>10%</span><span>20%</span><span>30%+</span></div>
+        <p class="small">벽산 단지 전체 기준 -52.9%는 면적이 섞인 값이라 그래프에서는 제외하고, 매수 판단에 가까운 114㎡ 최근 거래 기준 -23.5%를 사용했습니다.</p>
+      </div>
+    </section>
+
     <section>
-      <h2>7억으로 살 때 “많이 떨어진 순서로 봐라” 최종 순위</h2>
+      <h2>7억으로 살 때 “낙폭+회복력” 최종 순위</h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -145,21 +216,21 @@
           <tbody>
             <tr>
               <td><span class="rank">1</span></td>
-              <td><strong>금천구 시흥동 벽산</strong><br><span class="tag red">낙폭 1픽</span></td>
-              <td><strong>5.68억</strong><br><span class="small">114.84㎡ / 2000년 / 최근 3개월 단지 최저 3.65억</span></td>
-              <td><strong>★★★★☆ 4.10</strong></td>
-              <td>고점 대비 할인폭이 가장 크게 보이고, 대단지·브랜드·관악산 공원성이 있습니다.</td>
-              <td>벽산 브랜드와 단지 규모 강점.</td>
-              <td>언덕·교통·구축 수리비. 같은 평형 낙폭 재검산 필수.</td>
+              <td><strong>중랑구 중화동 동양엔파트</strong><br><span class="tag green">Top Pick</span></td>
+              <td><strong>6.5~6.9억</strong><br><span class="small">84㎡대 / 2010년 / 고점권 9.6억</span></td>
+              <td><strong>★★★★★ 4.30</strong></td>
+              <td>고점 대비 -28.1~-32.3%. 낙폭이 크고, 역 접근성·생활권·84㎡ 수요가 살아 있습니다.</td>
+              <td>동양엔파트. 브랜드는 중간 이하이나 실거주 상품성 양호.</td>
+              <td>동양엔파트/2차 명칭, 같은 평형 동·층 비교 확인.</td>
             </tr>
             <tr>
               <td><span class="rank">2</span></td>
-              <td><strong>중랑구 중화동 동양엔파트</strong><br><span class="tag green">낙폭+회복</span></td>
-              <td><strong>6.5~6.9억</strong><br><span class="small">84㎡대 / 2010년</span></td>
-              <td><strong>★★★★☆ 4.05</strong></td>
-              <td>9억대 고점권 대비 6억대 후반 후보라 낙폭과 회복 가능성이 같이 보입니다.</td>
-              <td>동양엔파트. 브랜드는 중간 이하이나 실거주 상품성 양호.</td>
-              <td>단지명/2차 구분, 같은 평형 비교 확인.</td>
+              <td><strong>금천구 시흥동 벽산</strong><br><span class="tag red">Deep Value</span></td>
+              <td><strong>5.68억</strong><br><span class="small">114.84㎡ / 2000년 / 단지 전체 최저 3.65억</span></td>
+              <td><strong>★★★★☆ 4.10</strong></td>
+              <td>114㎡ 기준 -23.5%, 단지 전체 헤드라인 -52.9%. 대단지·브랜드·관악산 공원성이 있습니다.</td>
+              <td>벽산 브랜드와 단지 규모 강점.</td>
+              <td>언덕·교통·구축 수리비. 같은 평형 낙폭 재검산 필수.</td>
             </tr>
             <tr>
               <td><span class="rank">3</span></td>
@@ -255,16 +326,16 @@
 
     <section class="grid two" id="pick">
       <div class="card">
-        <span class="tag green">낙폭 1순위</span>
-        <h2 style="margin-top:12px">금천구 시흥동 벽산</h2>
-        <p>많이 떨어진 것을 먼저 찾으면 시흥동 벽산이 가장 앞에 옵니다. 단지 전체 통계상 고점권 대비 할인폭이 가장 크고, 벽산 브랜드·대단지·관악산 생활권이라는 회복 재료가 있습니다.</p>
-        <p class="small">다만 언덕, 구축 수리비, 교통 약점이 할인 이유입니다. 같은 평형의 고점 대비 낙폭을 한 번 더 확인하고 들어가야 합니다.</p>
+        <span class="tag green">Top Pick</span>
+        <h2 style="margin-top:12px">중랑구 중화동 동양엔파트</h2>
+        <p>고점권 9.6억 대비 최근 6.5~6.9억이면 약 -28.1~-32.3% 하락입니다. 낙폭이 충분하고, 84㎡ 수요·역 접근성·생활권 설명이 가능한 후보입니다.</p>
+        <p class="small">브랜드가 최상급은 아니지만, 7억 이하 예산에서 “많이 빠졌고 다시 팔릴 이유가 있는 집”에 가장 가깝습니다.</p>
       </div>
       <div class="card">
-        <span class="tag red">조건형에서 내려온 후보</span>
-        <h2 style="margin-top:12px">동대문구 휘경제이스카이</h2>
-        <p>처음에는 입지·연식 조합 때문에 1순위였지만, MCP로 고점권을 검산해보니 “많이 떨어진 집”은 아니었습니다.</p>
-        <p class="small">좋은 집과 싸게 빠진 집은 다릅니다. 이번 리포트의 기준은 낙폭 매수이므로 휘경제이스카이는 보조 후보로 내렸습니다.</p>
+        <span class="tag red">Deep Value</span>
+        <h2 style="margin-top:12px">금천구 시흥동 벽산</h2>
+        <p>114㎡ 기준으로도 약 -23.5% 할인이고, 단지 전체 통계로는 최대 -52.9%까지 보입니다. 대단지·브랜드·공원성은 강합니다.</p>
+        <p class="small">다만 싼 이유가 분명합니다. 언덕, 교통, 구축 수리비를 감수할 수 있는 매수자에게 맞는 역발상 후보입니다.</p>
       </div>
     </section>
 
@@ -286,7 +357,7 @@
       <div class="quote">결론: “서울 7억”은 포기 예산이 아닙니다. 단지 규모와 입지를 조금 유연하게 보면, 84㎡는 물론 100㎡ 이상까지도 실거래 후보가 나옵니다.</div>
       <div class="callout green">
         <div>🏁</div>
-        <div><strong>최종 픽</strong> “많이 떨어진 집을 싸게 산다” 기준이면 1순위 시흥동 벽산, 2순위 중화동양엔파트, 3순위 길동 한일시티타워입니다. 휘경제이스카이는 좋은 조건형 후보지만 낙폭 매수 1순위는 아닙니다.</div>
+        <div><strong>최종 픽</strong> 전문가식으로 보면 1순위는 중화동양엔파트입니다. 낙폭은 -28~-32%로 충분하고 회복 논리도 있습니다. 시흥동 벽산은 낙폭은 더 자극적이지만 리스크가 커서 Deep Value, 길동 한일시티타워는 넓은 면적 안전마진 후보입니다.</div>
       </div>
     </section>
 

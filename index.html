@@ -62,8 +62,8 @@
   <main>
     <div class="hero">
       <div class="icon">🏠</div>
-      <h1>서울 7억, 싸기만 한 집 말고 오를 집 찾기</h1>
-      <p class="subtitle">“7억 이하” 후보를 다시 걸렀습니다. 가격만 싼 집이 아니라 브랜드, 역세권, 대단지, 신축, 평지, 초등학교, 학군·교육, 공원, 생활 인프라까지 별점으로 매겨 `이 순서로 봐라` 랭킹을 만들었습니다.</p>
+      <h1>서울 7억, 많이 떨어졌는데 다시 오를 집 찾기</h1>
+      <p class="subtitle">기준을 다시 잡았습니다. 7억 이하 후보 중에서 먼저 고점 대비 낙폭을 보고, 그 다음 브랜드, 역세권, 대단지, 신축, 평지, 초등학교, 학군·교육, 공원, 생활 인프라를 붙여 `싸게 사도 팔릴 집` 순서로 재정렬했습니다.</p>
       <div class="meta">
         <span class="pill">realestate-remote MCP</span>
         <span class="pill">서울 25개 구</span>
@@ -72,6 +72,7 @@
         <span class="pill">예산 7억 이하</span>
       </div>
       <nav class="jump" aria-label="페이지 이동">
+        <a href="#drop">낙폭 검산</a>
         <a href="#ranking">최종 순위</a>
         <a href="#score">별점표</a>
         <a href="#area">면적 랭킹</a>
@@ -91,13 +92,51 @@
     <section id="ranking">
       <div class="callout red">
         <div>🔥</div>
-        <div><strong>랭킹을 바꾼 기준</strong> 월계동 대우 134㎡ 5억처럼 숫자는 충격적인 후보가 있지만, 상승 여력은 면적만으로 나오지 않습니다. 브랜드, 역세권, 대단지, 신축, 평지, 초등학교 접근성, 환금성까지 합쳐 다시 순위를 매겼습니다.</div>
+        <div><strong>랭킹을 다시 바꾼 기준</strong> 맞습니다. 7억 이하만 보면 그냥 싼 집 목록입니다. 이번 버전은 `고점 대비 얼마나 빠졌는지`를 1차 필터로 보고, 빠진 이유가 구조적 약점인지 회복 가능한 할인인지 다시 나눴습니다.</div>
       </div>
       <div class="callout blue">
         <div>🔎</div>
-        <div><strong>결론 먼저</strong> 7억으로 “오를 만한 집”을 노리면 1순위는 <strong>동대문구 휘경동 휘경제이스카이</strong>, 2순위는 <strong>중랑구 중화동 동양엔파트</strong>, 3순위는 <strong>강동구 길동 한일시티타워</strong>입니다.</div>
+        <div><strong>결론 먼저</strong> 낙폭을 우선하면 1순위는 <strong>금천구 시흥동 벽산</strong>, 2순위는 <strong>중랑구 중화동 동양엔파트</strong>, 3순위는 <strong>강동구 길동 한일시티타워</strong>입니다. 휘경제이스카이는 조건은 좋지만 “많이 떨어진 집” 기준에서는 1순위가 아닙니다.</div>
       </div>
-      <h2>7억으로 살 때 “이거 먼저 봐라” 최종 순위</h2>
+    </section>
+
+    <section id="drop">
+      <h2>고점 대비 낙폭 검산</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>후보</th><th>낙폭 판단</th><th>MCP 확인값</th><th>해석</th><th>검산 필요</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>금천구 시흥동 벽산</strong><br><span class="tag red">낙폭 1순위 후보</span></td>
+              <td><strong>단지 전체 기준 최대 -52.9%</strong></td>
+              <td>2021.12~2022.02 최고 7.75억, 2026.04~06 최저 3.65억. 최근 114㎡ 거래도 5.68억 포착.</td>
+              <td>대단지·브랜드·공원성은 강하지만, 언덕·교통 약점 때문에 크게 할인된 후보입니다. 할인폭 자체는 가장 큽니다.</td>
+              <td>면적 혼합 통계라 같은 평형 최고가와 최근가를 현장/등기로 재확인해야 합니다.</td>
+            </tr>
+            <tr>
+              <td><strong>중랑구 중화동 동양엔파트</strong><br><span class="tag green">낙폭+회복 균형</span></td>
+              <td><strong>9억대 고점권 → 6억대 후반</strong></td>
+              <td>2021.12~2022.02 동양엔파트2차 최고 9.6억, 최근 84㎡대 6.5~6.9억 후보.</td>
+              <td>낙폭이 있으면서 역 접근성과 생활권이 살아 있습니다. “떨어진 이유”보다 “다시 설명 가능한 가격” 쪽이 큽니다.</td>
+              <td>동양엔파트/2차 명칭과 동·층별 같은 평형 비교 필요.</td>
+            </tr>
+            <tr>
+              <td><strong>동대문구 휘경제이스카이</strong><br><span class="tag yellow">낙폭 매수 아님</span></td>
+              <td><strong>최근가가 고점권보다 높음</strong></td>
+              <td>MCP 검산: 2021.12~2022.02 최고 6.4억, 2026.04~06 최저 6.7억.</td>
+              <td>입지·연식 조합은 좋지만, “많이 떨어진 집을 산다”는 전략에는 맞지 않습니다. 그래서 순위에서 내렸습니다.</td>
+              <td>실거래 표본이 적어 보조 후보로만 유지.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="small">낙폭은 같은 단지 안에서도 면적·동·층·수리 상태에 따라 크게 달라집니다. 여기서는 MCP 실거래로 방향성을 잡고, 최종 매수 전 같은 평형 실거래와 등기 여부를 다시 확인하는 방식이 맞습니다.</p>
+    </section>
+
+    <section>
+      <h2>7억으로 살 때 “많이 떨어진 순서로 봐라” 최종 순위</h2>
       <div class="table-wrap">
         <table>
           <thead>
@@ -106,42 +145,51 @@
           <tbody>
             <tr>
               <td><span class="rank">1</span></td>
-              <td><strong>동대문구 휘경동 휘경제이스카이</strong><br><span class="tag green">최종 1픽</span></td>
-              <td><strong>6.9억</strong><br><span class="small">84.43㎡ / 2016년 / 15층</span></td>
-              <td><strong>★★★★☆ 4.25</strong></td>
-              <td>회기·외대앞 생활권, 2016년식 84㎡, 7억 안쪽. 교통과 가격의 균형이 가장 좋습니다.</td>
-              <td>소규모 주상복합. 브랜드는 약하지만 연식·입지가 보완.</td>
-              <td>대단지 프리미엄 약함. 관리 상태와 주차 확인.</td>
+              <td><strong>금천구 시흥동 벽산</strong><br><span class="tag red">낙폭 1픽</span></td>
+              <td><strong>5.68억</strong><br><span class="small">114.84㎡ / 2000년 / 최근 3개월 단지 최저 3.65억</span></td>
+              <td><strong>★★★★☆ 4.10</strong></td>
+              <td>고점 대비 할인폭이 가장 크게 보이고, 대단지·브랜드·관악산 공원성이 있습니다.</td>
+              <td>벽산 브랜드와 단지 규모 강점.</td>
+              <td>언덕·교통·구축 수리비. 같은 평형 낙폭 재검산 필수.</td>
             </tr>
             <tr>
               <td><span class="rank">2</span></td>
-              <td><strong>중랑구 중화동 동양엔파트</strong><br><span class="tag">균형형</span></td>
+              <td><strong>중랑구 중화동 동양엔파트</strong><br><span class="tag green">낙폭+회복</span></td>
               <td><strong>6.5~6.9억</strong><br><span class="small">84㎡대 / 2010년</span></td>
               <td><strong>★★★★☆ 4.05</strong></td>
-              <td>중랑역·중화역 생활권, 2010년식 84㎡. 가격이 7억 턱밑이라 회복 탄력이 있습니다.</td>
+              <td>9억대 고점권 대비 6억대 후반 후보라 낙폭과 회복 가능성이 같이 보입니다.</td>
               <td>동양엔파트. 브랜드는 중간 이하이나 실거주 상품성 양호.</td>
-              <td>주상복합 성격, 단지 규모와 관리비 확인.</td>
+              <td>단지명/2차 구분, 같은 평형 비교 확인.</td>
             </tr>
             <tr>
               <td><span class="rank">3</span></td>
               <td><strong>강동구 길동 한일시티타워</strong><br><span class="tag yellow">면적 프리미엄</span></td>
               <td><strong>5.95~6.0억</strong><br><span class="small">116.28㎡ / 2013년</span></td>
-              <td><strong>★★★★☆ 3.95</strong></td>
-              <td>강동구 100㎡ 초과가 6억 전후로 반복 거래. 생활 인프라와 면적 가성비가 압도적입니다.</td>
+              <td><strong>★★★☆☆ 3.90</strong></td>
+              <td>강동구 100㎡ 초과가 6억 전후로 반복 거래. 고점 자료는 부족하지만 최근 가격 자체의 안전마진이 큽니다.</td>
               <td>한일/우성아트빌 계열 소규모. 브랜드·규모는 약점.</td>
               <td>소규모라 환금성 할인. 대단지 선호 시장에서는 감점.</td>
             </tr>
             <tr>
               <td><span class="rank">4</span></td>
+              <td><strong>동대문구 휘경동 휘경제이스카이</strong><br><span class="tag yellow">조건형 보조 후보</span></td>
+              <td><strong>6.9억</strong><br><span class="small">84.43㎡ / 2016년 / 15층</span></td>
+              <td><strong>★★★☆☆ 3.80</strong></td>
+              <td>연식·역 접근성은 좋지만, 고점 대비 많이 빠진 후보는 아닙니다.</td>
+              <td>소규모 주상복합. 브랜드는 약하지만 연식·입지가 보완.</td>
+              <td>낙폭 매수 전략에서는 후순위.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">5</span></td>
               <td><strong>동대문구 장안동 삼현팰리체</strong><br><span class="tag">6억 초반 84</span></td>
               <td><strong>6.01억</strong><br><span class="small">84.10㎡ / 2011년</span></td>
-              <td><strong>★★★☆☆ 3.75</strong></td>
+              <td><strong>★★★☆☆ 3.70</strong></td>
               <td>동대문구 84㎡를 6억 초반에 잡는 가격 매력. 평지 생활권과 장안동 인프라가 장점입니다.</td>
               <td>소규모 브랜드. 대단지 효과는 약함.</td>
               <td>역세권 체감은 후보별 확인 필요. 환금성 점검.</td>
             </tr>
             <tr>
-              <td><span class="rank">5</span></td>
+              <td><span class="rank">6</span></td>
               <td><strong>양천구 신월동 금하뜨라네</strong><br><span class="tag green">절대가 최강</span></td>
               <td><strong>4.4~4.8억</strong><br><span class="small">84㎡대 / 2016년</span></td>
               <td><strong>★★★☆☆ 3.70</strong></td>
@@ -150,7 +198,7 @@
               <td>교통·항공소음·생활권 약점 때문에 상승 속도 제한 가능.</td>
             </tr>
             <tr>
-              <td><span class="rank">6</span></td>
+              <td><span class="rank">7</span></td>
               <td><strong>강동구 암사동 다성이즈빌</strong><br><span class="tag purple">강동 84</span></td>
               <td><strong>6.5억</strong><br><span class="small">84.91㎡ / 2011년</span></td>
               <td><strong>★★★☆☆ 3.65</strong></td>
@@ -159,22 +207,13 @@
               <td>거래량과 환금성이 가장 큰 리스크.</td>
             </tr>
             <tr>
-              <td><span class="rank">7</span></td>
+              <td><span class="rank">8</span></td>
               <td><strong>도봉구 도봉동 한양수자인</strong><br><span class="tag yellow">대형 실거주</span></td>
               <td><strong>6.8억</strong><br><span class="small">114.62㎡ / 2010년</span></td>
               <td><strong>★★★☆☆ 3.55</strong></td>
               <td>2010년식 대형 면적. 가족 실거주 만족도는 높지만 서울 외곽 할인도 큽니다.</td>
               <td>한양수자인 브랜드. 단지 규모는 크지 않음.</td>
               <td>상승 탄력은 동북 외곽 수요에 좌우.</td>
-            </tr>
-            <tr>
-              <td><span class="rank">8</span></td>
-              <td><strong>금천구 시흥동 벽산</strong><br><span class="tag yellow">대단지성</span></td>
-              <td><strong>5.68억</strong><br><span class="small">114.84㎡ / 2000년</span></td>
-              <td><strong>★★★☆☆ 3.45</strong></td>
-              <td>벽산 브랜드, 관악산 쾌적성, 큰 면적. 가격 대비 실사용 면적이 좋습니다.</td>
-              <td>벽산 브랜드와 단지 규모 강점.</td>
-              <td>언덕·교통 약점. 평지 선호자에게 감점.</td>
             </tr>
           </tbody>
         </table>
@@ -216,16 +255,16 @@
 
     <section class="grid two" id="pick">
       <div class="card">
-        <span class="tag green">상승 여력 1순위</span>
-        <h2 style="margin-top:12px">동대문구 휘경동 휘경제이스카이</h2>
-        <p>7억 이하에서 84㎡, 2016년식, 역 접근성, 회기·외대앞 생활권을 동시에 잡는 조합이 가장 좋습니다. 다음 매수자가 이해하기 쉬운 집이라는 점이 핵심입니다.</p>
-        <p class="small">브랜드와 대단지 점수는 낮지만, 가격대·연식·교통이 그 약점을 보완합니다. “싸다”보다 “팔릴 이유가 있다” 쪽에 가까운 후보입니다.</p>
+        <span class="tag green">낙폭 1순위</span>
+        <h2 style="margin-top:12px">금천구 시흥동 벽산</h2>
+        <p>많이 떨어진 것을 먼저 찾으면 시흥동 벽산이 가장 앞에 옵니다. 단지 전체 통계상 고점권 대비 할인폭이 가장 크고, 벽산 브랜드·대단지·관악산 생활권이라는 회복 재료가 있습니다.</p>
+        <p class="small">다만 언덕, 구축 수리비, 교통 약점이 할인 이유입니다. 같은 평형의 고점 대비 낙폭을 한 번 더 확인하고 들어가야 합니다.</p>
       </div>
       <div class="card">
-        <span class="tag red">면적 가성비 1순위</span>
-        <h2 style="margin-top:12px">강동구 길동 한일시티타워</h2>
-        <p>전용 116.28㎡가 6억 전후로 반복 거래된 점은 여전히 강력합니다. 가족 실거주와 넓은 집 만족도를 우선하면 현장 확인 1순위입니다.</p>
-        <p class="small">다만 소규모 단지라 브랜드·대단지·환금성 할인은 분명합니다. 싸게 사되, 출구 전략까지 보고 들어가야 합니다.</p>
+        <span class="tag red">조건형에서 내려온 후보</span>
+        <h2 style="margin-top:12px">동대문구 휘경제이스카이</h2>
+        <p>처음에는 입지·연식 조합 때문에 1순위였지만, MCP로 고점권을 검산해보니 “많이 떨어진 집”은 아니었습니다.</p>
+        <p class="small">좋은 집과 싸게 빠진 집은 다릅니다. 이번 리포트의 기준은 낙폭 매수이므로 휘경제이스카이는 보조 후보로 내렸습니다.</p>
       </div>
     </section>
 
@@ -236,8 +275,8 @@
           <thead><tr><th>예산</th><th>노릴 수 있는 것</th><th>대표 후보</th><th>전략</th></tr></thead>
           <tbody>
             <tr><td><strong>4~5억</strong></td><td>가격 안전마진 최우선</td><td>신월동 금하뜨라네</td><td>교통 약점을 감수하고 절대가 상승을 노리는 구간. 초등학교·생활 편의는 직접 체감 확인.</td></tr>
-            <tr><td><strong>5~6억</strong></td><td>넓은 면적과 생활 인프라</td><td>길동 한일시티타워, 시흥동 벽산</td><td>실거주 만족도는 크지만 소규모·언덕·환금성 리스크를 반드시 가격에 반영.</td></tr>
-            <tr><td><strong>6~7억</strong></td><td>상승 여력과 환금성 균형</td><td>휘경제이스카이, 동양엔파트, 삼현팰리체</td><td>7억 매수의 핵심 구간. 역세권, 84㎡, 2010년대 연식이 겹치는 후보를 우선 검토.</td></tr>
+            <tr><td><strong>5~6억</strong></td><td>낙폭과 면적을 동시에 확인</td><td>시흥동 벽산, 길동 한일시티타워</td><td>낙폭은 크지만 할인 이유도 분명합니다. 언덕·교통·수리비를 가격에 반영해야 합니다.</td></tr>
+            <tr><td><strong>6~7억</strong></td><td>낙폭+회복 가능성 균형</td><td>동양엔파트, 휘경제이스카이, 삼현팰리체</td><td>동양엔파트는 낙폭형, 휘경제이스카이는 조건형입니다. 전략이 다르니 같은 순위로 보면 안 됩니다.</td></tr>
           </tbody>
         </table>
       </div>
@@ -247,7 +286,7 @@
       <div class="quote">결론: “서울 7억”은 포기 예산이 아닙니다. 단지 규모와 입지를 조금 유연하게 보면, 84㎡는 물론 100㎡ 이상까지도 실거래 후보가 나옵니다.</div>
       <div class="callout green">
         <div>🏁</div>
-        <div><strong>최종 픽</strong> 상승 여력까지 보면 1순위 휘경제이스카이, 2순위 중화동양엔파트, 3순위 길동 한일시티타워입니다. 넓은 집 실거주는 길동, 절대 저가는 신월동 금하뜨라네, 대단지 안정감은 시흥동 벽산을 따로 봐야 합니다.</div>
+        <div><strong>최종 픽</strong> “많이 떨어진 집을 싸게 산다” 기준이면 1순위 시흥동 벽산, 2순위 중화동양엔파트, 3순위 길동 한일시티타워입니다. 휘경제이스카이는 좋은 조건형 후보지만 낙폭 매수 1순위는 아닙니다.</div>
       </div>
     </section>
 
@@ -261,7 +300,7 @@
       </div>
     </section>
 
-    <footer>자료 출처: 사용자가 추가한 realestate-remote MCP의 search_apartment_trades · 서울 25개 구 2026년 4~6월 아파트 매매 실거래 조회 · 별점은 실거래가, 연식, 면적, 역 접근성, 단지 규모, 생활권 공개 정보를 합산한 정성 평가 · 가격은 실거래 신고 기준이며 해제·정정·등기 미완료 가능성 확인 필요</footer>
+    <footer>자료 출처: 사용자가 추가한 realestate-remote MCP의 search_apartment_trades · price_stats · 서울 25개 구 2026년 4~6월 아파트 매매 실거래 및 2021.12~2022.02 고점권 비교 · 별점은 실거래가, 낙폭, 연식, 면적, 역 접근성, 단지 규모, 생활권 공개 정보를 합산한 정성 평가 · 가격은 실거래 신고 기준이며 해제·정정·등기 미완료 가능성 확인 필요</footer>
   </main>
 </body>
 </html>

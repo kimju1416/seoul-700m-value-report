@@ -32,6 +32,7 @@
     .grid.two{grid-template-columns:repeat(2,1fr)}
     .grid.four{grid-template-columns:repeat(4,1fr)}
     .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--soft-shadow)}
+    .report-card{background:linear-gradient(180deg,#ffffff,#f8faf7);border-left:4px solid #111827}
     .stat-card{position:relative;overflow:hidden;min-height:142px}
     .stat-card::after{content:"";position:absolute;right:-32px;top:-42px;width:112px;height:112px;border-radius:50%;background:rgba(22,122,91,.10)}
     .label{color:var(--muted);font-size:13px;margin-bottom:10px;font-weight:700}
@@ -53,17 +54,23 @@
     .research-note{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}
     .opinion{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;border-bottom:1px solid var(--line);padding:13px 0}
     .opinion:last-child{border-bottom:0}.opinion strong{font-size:16px}.grade{font-size:22px;font-weight:850;color:#111827;white-space:nowrap}
-    .chart{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--soft-shadow)}
+    .chart{background:#111827;color:#eef2f7;border:1px solid #263241;border-radius:10px;padding:22px;box-shadow:0 22px 60px rgba(17,24,39,.22)}
+    .chart-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px}
+    .chart-card{background:#0b1220;border:1px solid #273447;border-radius:8px;padding:16px}
+    .chart-title{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:12px}
+    .chart-title h3{color:#f8fafc;margin:0}.chart-title span{color:#9ca3af;font-size:12px;text-align:right}
+    .chart svg{width:100%;height:auto;display:block}.chart text{font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Noto Sans KR",Arial,sans-serif}
+    .legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;color:#cbd5e1;font-size:12px}.legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
     .chart-row{display:grid;grid-template-columns:170px 1fr 96px;gap:12px;align-items:center;margin:15px 0}
-    .chart-label{font-size:14px;font-weight:760}.track{height:24px;background:#edf0eb;border-radius:6px;overflow:hidden}
-    .fill{height:100%;display:block;background:linear-gradient(90deg,#c2413b,#a16207);border-radius:6px}.fill.green{background:linear-gradient(90deg,#167a5b,#2563eb)}.fill.gray{background:#c7cec7}
+    .chart-label{font-size:14px;font-weight:760}.track{height:24px;background:#1f2937;border-radius:6px;overflow:hidden}
+    .fill{height:100%;display:block;background:linear-gradient(90deg,#c2413b,#f59e0b);border-radius:6px}.fill.green{background:linear-gradient(90deg,#16a34a,#38bdf8)}.fill.gray{background:#64748b}
     .axis{display:flex;justify-content:space-between;color:var(--muted);font-size:12px;margin-top:8px}
     .matrix{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.matrix .card{padding:16px}.metric{font-size:24px;font-weight:850;display:block;line-height:1.1}
     .quote{border-left:3px solid #c9c2b8;padding-left:16px;color:#555a60;font-size:18px;margin:20px 0}
     .check{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
     .check:last-child{border-bottom:0}.box{width:20px;height:20px;border:1.5px solid #b8b2aa;border-radius:5px;background:#fff;margin-top:3px}
     footer{color:var(--muted);font-size:13px;margin-top:36px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}
-    @media(max-width:840px){.grid,.grid.two,.grid.four,.research-note,.matrix{grid-template-columns:1fr}.bar-row,.chart-row{grid-template-columns:1fr;gap:5px}main{width:min(100% - 24px,1040px);margin-top:-72px}.hero{padding:20px}.cover{height:270px}}
+    @media(max-width:840px){.grid,.grid.two,.grid.four,.research-note,.matrix,.chart-grid{grid-template-columns:1fr}.bar-row,.chart-row{grid-template-columns:1fr;gap:5px}main{width:min(100% - 24px,1040px);margin-top:-72px}.hero{padding:20px}.cover{height:270px}}
   </style>
 </head>
 <body>
@@ -103,7 +110,7 @@
     <section id="research">
       <h2>Investment View: 7억 이하 낙폭 매수 후보</h2>
       <div class="research-note">
-        <div class="card">
+        <div class="card report-card">
           <div class="opinion">
             <div><strong>Top Pick</strong><br><span class="small">중화동 동양엔파트: 고점권 9.6억 대비 최근 6.5~6.9억. 낙폭과 회복 논리가 가장 선명합니다.</span></div>
             <span class="grade">BUY</span>
@@ -117,7 +124,7 @@
             <span class="grade">WATCH</span>
           </div>
         </div>
-        <div class="card">
+        <div class="card report-card">
           <h3>분석 프레임</h3>
           <p>기업 분석처럼 보면 핵심은 PER이 아니라 <strong>고점 대비 할인율</strong>, <strong>할인의 이유</strong>, <strong>회복 촉매</strong>, <strong>출구 유동성</strong>입니다.</p>
           <p class="small">할인율만 크면 함정일 수 있고, 입지만 좋으면 이미 가격에 반영됐을 수 있습니다. 이번 리포트는 둘을 분리해서 봅니다.</p>
@@ -126,10 +133,10 @@
     </section>
 
     <section class="matrix">
-      <div class="card"><div class="label">동양엔파트 낙폭</div><span class="metric">-28~-32%</span><div class="small">9.6억 고점권 대비 6.5~6.9억</div></div>
-      <div class="card"><div class="label">벽산 114㎡ 낙폭</div><span class="metric">-23.5%</span><div class="small">7.75억 대비 5.68억 기준</div></div>
-      <div class="card"><div class="label">벽산 단지 전체</div><span class="metric">-52.9%</span><div class="small">면적 혼합 통계, 참고용</div></div>
-      <div class="card"><div class="label">휘경제이스카이</div><span class="metric">+4.7%</span><div class="small">최근가가 고점권보다 높음</div></div>
+      <div class="card report-card"><div class="label">동양엔파트 낙폭</div><span class="metric">-28~-32%</span><div class="small">9.6억 고점권 대비 6.5~6.9억</div></div>
+      <div class="card report-card"><div class="label">벽산 114㎡ 낙폭</div><span class="metric">-23.5%</span><div class="small">7.75억 대비 5.68억 기준</div></div>
+      <div class="card report-card"><div class="label">벽산 단지 전체</div><span class="metric">-52.9%</span><div class="small">면적 혼합 통계, 참고용</div></div>
+      <div class="card report-card"><div class="label">휘경제이스카이</div><span class="metric">+4.7%</span><div class="small">최근가가 고점권보다 높음</div></div>
     </section>
 
     <section id="ranking">
@@ -181,28 +188,94 @@
     <section id="chart">
       <h2>고점 대비 하락률 그래프</h2>
       <div class="chart">
-        <div class="chart-row">
-          <div class="chart-label">동양엔파트</div>
-          <div class="track"><span class="fill green" style="width:100%"></span></div>
-          <strong>-32.3%</strong>
+        <div class="chart-grid">
+          <div class="chart-card">
+            <div class="chart-title">
+              <h3>Price Bridge</h3>
+              <span>고점권 가격 대비<br>최근 매수 가능 가격</span>
+            </div>
+            <svg viewBox="0 0 620 360" role="img" aria-label="고점 대비 현재 가격 브릿지 차트">
+              <defs>
+                <linearGradient id="loss" x1="0" x2="1">
+                  <stop offset="0" stop-color="#ef4444"/>
+                  <stop offset="1" stop-color="#f59e0b"/>
+                </linearGradient>
+                <linearGradient id="gain" x1="0" x2="1">
+                  <stop offset="0" stop-color="#22c55e"/>
+                  <stop offset="1" stop-color="#38bdf8"/>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="620" height="360" rx="14" fill="#0b1220"/>
+              <g stroke="#243244" stroke-width="1">
+                <line x1="90" y1="54" x2="590" y2="54"/><line x1="90" y1="118" x2="590" y2="118"/><line x1="90" y1="182" x2="590" y2="182"/><line x1="90" y1="246" x2="590" y2="246"/><line x1="90" y1="310" x2="590" y2="310"/>
+              </g>
+              <g fill="#94a3b8" font-size="12">
+                <text x="26" y="58">10억</text><text x="34" y="122">8억</text><text x="34" y="186">6억</text><text x="34" y="250">4억</text><text x="34" y="314">2억</text>
+              </g>
+              <g>
+                <text x="116" y="336" fill="#cbd5e1" font-size="13" text-anchor="middle">동양엔파트</text>
+                <rect x="90" y="54" width="52" height="256" rx="6" fill="#334155"/>
+                <rect x="152" y="102" width="52" height="208" rx="6" fill="url(#gain)"/>
+                <line x1="142" y1="54" x2="152" y2="102" stroke="#f59e0b" stroke-width="3"/>
+                <text x="90" y="42" fill="#f8fafc" font-size="14" font-weight="700">9.6억</text>
+                <text x="150" y="90" fill="#7dd3fc" font-size="14" font-weight="700">6.5~6.9억</text>
+                <text x="116" y="24" fill="#fbbf24" font-size="16" font-weight="800">-28~-32%</text>
+              </g>
+              <g>
+                <text x="326" y="336" fill="#cbd5e1" font-size="13" text-anchor="middle">시흥동 벽산</text>
+                <rect x="300" y="113" width="52" height="197" rx="6" fill="#334155"/>
+                <rect x="362" y="128" width="52" height="182" rx="6" fill="url(#loss)"/>
+                <line x1="352" y1="113" x2="362" y2="128" stroke="#f59e0b" stroke-width="3"/>
+                <text x="298" y="101" fill="#f8fafc" font-size="14" font-weight="700">7.75억</text>
+                <text x="362" y="116" fill="#fed7aa" font-size="14" font-weight="700">5.68억</text>
+                <text x="326" y="83" fill="#fbbf24" font-size="16" font-weight="800">-23.5%</text>
+              </g>
+              <g>
+                <text x="518" y="336" fill="#cbd5e1" font-size="13" text-anchor="middle">휘경제이스카이</text>
+                <rect x="494" y="157" width="48" height="153" rx="6" fill="#334155"/>
+                <rect x="552" y="150" width="48" height="160" rx="6" fill="#64748b"/>
+                <line x1="542" y1="157" x2="552" y2="150" stroke="#94a3b8" stroke-width="3"/>
+                <text x="490" y="145" fill="#f8fafc" font-size="14" font-weight="700">6.4억</text>
+                <text x="552" y="138" fill="#cbd5e1" font-size="14" font-weight="700">6.7억</text>
+                <text x="518" y="120" fill="#94a3b8" font-size="16" font-weight="800">+4.7%</text>
+              </g>
+            </svg>
+            <div class="legend"><span><i style="background:#334155"></i>고점권</span><span><i style="background:#22c55e"></i>Top Pick 현재가</span><span><i style="background:#ef4444"></i>Deep Value 현재가</span></div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-title">
+              <h3>Drawdown Ranking</h3>
+              <span>하락률이 크면서<br>회복 논리가 있는 순서</span>
+            </div>
+            <svg viewBox="0 0 520 360" role="img" aria-label="고점 대비 하락률 랭킹 차트">
+              <rect x="0" y="0" width="520" height="360" rx="14" fill="#0b1220"/>
+              <g stroke="#243244" stroke-width="1">
+                <line x1="152" y1="54" x2="470" y2="54"/><line x1="152" y1="116" x2="470" y2="116"/><line x1="152" y1="178" x2="470" y2="178"/><line x1="152" y1="240" x2="470" y2="240"/><line x1="152" y1="302" x2="470" y2="302"/>
+              </g>
+              <g fill="#cbd5e1" font-size="14" font-weight="700">
+                <text x="24" y="82">동양엔파트</text>
+                <text x="24" y="150">시흥동 벽산 114㎡</text>
+                <text x="24" y="218">한일시티타워</text>
+                <text x="24" y="286">휘경제이스카이</text>
+              </g>
+              <rect x="152" y="62" width="292" height="34" rx="7" fill="url(#gain)"/>
+              <rect x="152" y="130" width="214" height="34" rx="7" fill="url(#loss)"/>
+              <rect x="152" y="198" width="72" height="34" rx="7" fill="#64748b"/>
+              <rect x="152" y="266" width="42" height="34" rx="7" fill="#475569"/>
+              <g fill="#f8fafc" font-size="15" font-weight="800">
+                <text x="454" y="85">-32.3%</text>
+                <text x="376" y="153">-23.5%</text>
+                <text x="236" y="221">N/A</text>
+                <text x="205" y="289">+4.7%</text>
+              </g>
+              <g fill="#94a3b8" font-size="11">
+                <text x="152" y="330">0%</text><text x="248" y="330">10%</text><text x="342" y="330">20%</text><text x="438" y="330">30%+</text>
+              </g>
+            </svg>
+            <p class="small" style="color:#cbd5e1">벽산 단지 전체 기준 -52.9%는 면적 혼합값이라 리서치 메모에만 남기고, 차트는 114㎡ 최근 거래 기준 -23.5%로 표시했습니다.</p>
+          </div>
         </div>
-        <div class="chart-row">
-          <div class="chart-label">시흥동 벽산 114㎡</div>
-          <div class="track"><span class="fill" style="width:73%"></span></div>
-          <strong>-23.5%</strong>
-        </div>
-        <div class="chart-row">
-          <div class="chart-label">길동 한일시티타워</div>
-          <div class="track"><span class="fill gray" style="width:18%"></span></div>
-          <strong>자료 부족</strong>
-        </div>
-        <div class="chart-row">
-          <div class="chart-label">휘경제이스카이</div>
-          <div class="track"><span class="fill gray" style="width:4%"></span></div>
-          <strong>+4.7%</strong>
-        </div>
-        <div class="axis"><span>0%</span><span>10%</span><span>20%</span><span>30%+</span></div>
-        <p class="small">벽산 단지 전체 기준 -52.9%는 면적이 섞인 값이라 그래프에서는 제외하고, 매수 판단에 가까운 114㎡ 최근 거래 기준 -23.5%를 사용했습니다.</p>
       </div>
     </section>
 

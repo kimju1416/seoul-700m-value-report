@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>서울 7억으로 집사기 가성비 리포트</title>
+  <style>
+    :root{
+      --bg:#f5f6f4;--paper:#fff;--ink:#23272b;--muted:#666f7a;--line:#e0e5df;--soft:#eef1ed;
+      --blue:#2563eb;--green:#167a5b;--red:#c2413b;--yellow:#a16207;--purple:#6d5bd0;
+      --shadow:0 18px 50px rgba(22,29,37,.10);--soft-shadow:0 9px 28px rgba(22,29,37,.06);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI","Pretendard","Noto Sans KR",Arial,sans-serif;line-height:1.62}
+    .cover{height:310px;background:linear-gradient(120deg,rgba(18,24,31,.86),rgba(24,91,75,.58) 58%,rgba(161,98,7,.24)),url("https://images.unsplash.com/photo-1538485399081-7c8ed3655bc7?auto=format&fit=crop&w=1800&q=80") center/cover}
+    main{width:min(1120px,calc(100% - 34px));margin:-86px auto 82px}
+    .hero{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border:1px solid rgba(224,229,223,.86);border-radius:14px;padding:26px;box-shadow:var(--shadow)}
+    .icon{width:86px;height:86px;display:grid;place-items:center;border-radius:18px;background:#15202b;color:#fff;border:1px solid rgba(255,255,255,.18);box-shadow:0 14px 34px rgba(22,29,37,.18);font-size:44px}
+    h1{margin:24px 0 12px;font-size:clamp(36px,6vw,68px);line-height:1.03;letter-spacing:0;color:#171b20;max-width:950px}
+    .subtitle{max-width:850px;color:#505a65;font-size:18px;margin:0 0 24px}
+    .meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 32px}
+    .pill{display:inline-flex;padding:6px 10px;border-radius:999px;background:#f0f3ef;border:1px solid var(--line);color:#50555b;font-size:13px;font-weight:650}
+    .jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .jump a{color:#26313b;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:13px;font-weight:700}
+    .jump a:hover{border-color:#b6c3b9;background:#f8faf7}
+    section{margin:30px 0}
+    h2{margin:0 0 14px;font-size:26px;letter-spacing:0;color:#1f2428}
+    h3{margin:0 0 8px;font-size:18px}
+    p{margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .grid.two{grid-template-columns:repeat(2,1fr)}
+    .grid.four{grid-template-columns:repeat(4,1fr)}
+    .card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:20px;box-shadow:var(--soft-shadow)}
+    .stat-card{position:relative;overflow:hidden;min-height:142px}
+    .stat-card::after{content:"";position:absolute;right:-32px;top:-42px;width:112px;height:112px;border-radius:50%;background:rgba(22,122,91,.10)}
+    .label{color:var(--muted);font-size:13px;margin-bottom:10px;font-weight:700}
+    .big{display:block;font-size:40px;line-height:1;color:#171b20;font-weight:820;letter-spacing:0}
+    .small{color:var(--muted);font-size:13px;margin-top:9px}
+    .tag{display:inline-flex;padding:3px 7px;border-radius:5px;font-size:12px;font-weight:700;background:#eef2ff;color:var(--blue);white-space:nowrap}
+    .tag.red{background:#fff0ef;color:var(--red)}.tag.green{background:#ebf7f0;color:var(--green)}.tag.yellow{background:#fff6df;color:var(--yellow)}.tag.purple{background:#f3efff;color:var(--purple)}
+    .callout{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:17px 19px;border-radius:10px;border:1px solid var(--line);background:#fff8e8;margin:14px 0;box-shadow:var(--soft-shadow)}
+    .callout.blue{background:#eef5ff}.callout.green{background:#edf8f2}.callout.red{background:#fff1f0}
+    .callout strong{display:block;margin-bottom:4px}
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper);box-shadow:var(--soft-shadow)}
+    table{width:100%;border-collapse:collapse;min-width:980px}
+    th,td{padding:14px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
+    th{background:#f2f5f1;color:#57616b;font-size:13px;position:sticky;top:0}tr:last-child td{border-bottom:0}
+    tbody tr:hover{background:#fbfcfa}
+    .rank{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:8px;background:#1f2933;color:#fff;font-size:12px;font-weight:800}
+    .bar-row{display:grid;grid-template-columns:210px 1fr 90px;gap:12px;align-items:center;margin:12px 0;font-size:14px}
+    .bar{height:12px;border-radius:999px;background:#ece8e2;overflow:hidden}.bar span{display:block;height:100%;background:var(--green);border-radius:999px}
+    .quote{border-left:3px solid #c9c2b8;padding-left:16px;color:#555a60;font-size:18px;margin:20px 0}
+    .check{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}
+    .check:last-child{border-bottom:0}.box{width:20px;height:20px;border:1.5px solid #b8b2aa;border-radius:5px;background:#fff;margin-top:3px}
+    footer{color:var(--muted);font-size:13px;margin-top:36px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px}
+    @media(max-width:840px){.grid,.grid.two,.grid.four{grid-template-columns:1fr}.bar-row{grid-template-columns:1fr;gap:5px}main{width:min(100% - 24px,1040px);margin-top:-72px}.hero{padding:20px}.cover{height:270px}}
+  </style>
+</head>
+<body>
+  <div class="cover"></div>
+  <main>
+    <div class="hero">
+      <div class="icon">🏠</div>
+      <h1>서울에서 7억으로 집사기!!!!!!!!!!</h1>
+      <p class="subtitle">“서울 7억이면 구축 소형밖에 못 사는 거 아냐?”를 MCP 실거래로 깨봤습니다. 최근 3개월 서울 아파트 실거래를 훑으니, 7억 이하에서도 전용 84㎡ 이상이 215건 잡혔습니다.</p>
+      <div class="meta">
+        <span class="pill">realestate-remote MCP</span>
+        <span class="pill">서울 25개 구</span>
+        <span class="pill">2026.04~2026.06 실거래</span>
+        <span class="pill">아파트 매매</span>
+        <span class="pill">예산 7억 이하</span>
+      </div>
+      <nav class="jump" aria-label="페이지 이동">
+        <a href="#ranking">TOP 10</a>
+        <a href="#area">면적 랭킹</a>
+        <a href="#pick">최종 픽</a>
+        <a href="#strategy">예산 전략</a>
+        <a href="#checklist">체크리스트</a>
+      </nav>
+    </div>
+
+    <section class="grid four">
+      <div class="card stat-card"><div class="label">분석한 서울 실거래</div><span class="big">3,715건</span><div class="small">최근 3개월 MCP 조회 표본</div></div>
+      <div class="card stat-card"><div class="label">7억 이하 거래</div><span class="big">1,012건</span><div class="small">서울 아파트 전체에서 포착</div></div>
+      <div class="card stat-card"><div class="label">7억 이하 59㎡+</div><span class="big">527건</span><div class="small">실거주 가능한 면적권</div></div>
+      <div class="card stat-card"><div class="label">7억 이하 84㎡+</div><span class="big">215건</span><div class="small">생각보다 많습니다</div></div>
+    </section>
+
+    <section id="ranking">
+      <div class="callout red">
+        <div>🔥</div>
+        <div><strong>가장 우와한 발견</strong> 서울 안에서 7억 이하로 전용 100㎡ 이상도 보입니다. 노원 월계동 대우 134.64㎡ 5억, 강동 길동 한일시티타워 116.28㎡ 5.95~6.0억, 도봉 한양수자인 114.62㎡ 6.8억 같은 거래가 잡혔습니다.</div>
+      </div>
+      <div class="callout blue">
+        <div>🔎</div>
+        <div><strong>하지만 함정도 큽니다</strong> 초저가 대형은 단지 규모, 역 거리, 관리비, 대출평가, 등기, 해제 여부를 반드시 확인해야 합니다. “싸다”와 “좋다”는 다릅니다.</div>
+      </div>
+    </section>
+
+    <section id="area">
+      <h2>서울 7억 가성비 TOP 10</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>순위</th><th>유형</th><th>후보</th><th>실거래가</th><th>면적/연식</th><th>왜 우와?</th><th>확인할 점</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="rank">1</span></td>
+              <td><span class="tag red">면적 끝판왕</span></td>
+              <td><strong>노원구 월계동 대우</strong></td>
+              <td><strong>5.0억</strong><br><span class="small">2026-04-09 / 7층</span></td>
+              <td>134.64㎡ / 1998년</td>
+              <td>서울 5억에 전용 40평급. 숫자만 보면 압도적입니다.</td>
+              <td>특수거래, 동·층, 관리비, 역 접근성, 등기 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">2</span></td>
+              <td><span class="tag green">현실 최강</span></td>
+              <td><strong>강동구 길동 한일시티타워</strong></td>
+              <td><strong>5.95~6.0억</strong><br><span class="small">2026년 5~6월 다수</span></td>
+              <td>116.28㎡ / 2013년</td>
+              <td>강동구, 2010년대, 100㎡ 초과가 6억 전후.</td>
+              <td>단지 규모와 상품성, 주차, 주변 시세와 괴리 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">3</span></td>
+              <td><span class="tag green">신축급 84</span></td>
+              <td><strong>양천구 신월동 금하뜨라네</strong></td>
+              <td><strong>4.4~4.8억</strong><br><span class="small">2026년 4~5월</span></td>
+              <td>84.83~84.95㎡ / 2016년</td>
+              <td>2016년식 84㎡가 5억 아래. 가격 자체가 강력합니다.</td>
+              <td>소규모 여부, 교통, 항공소음, 매물 상태 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">4</span></td>
+              <td><span class="tag">균형형</span></td>
+              <td><strong>동대문구 휘경동 휘경제이스카이</strong></td>
+              <td><strong>6.9억</strong><br><span class="small">2026-04-07 / 15층</span></td>
+              <td>84.43㎡ / 2016년</td>
+              <td>동대문구 2016년식 84㎡가 7억 안쪽.</td>
+              <td>단지 규모와 역세권 체감 거리 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">5</span></td>
+              <td><span class="tag">균형형</span></td>
+              <td><strong>동대문구 장안동 삼현팰리체</strong></td>
+              <td><strong>6.01억</strong><br><span class="small">2026-05-08 / 6층</span></td>
+              <td>84.10㎡ / 2011년</td>
+              <td>84㎡, 2010년대, 6억 초반이라는 균형감.</td>
+              <td>소규모 단지 여부와 환금성 체크.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">6</span></td>
+              <td><span class="tag yellow">대형 가성비</span></td>
+              <td><strong>도봉구 도봉동 한양수자인</strong></td>
+              <td><strong>6.8억</strong><br><span class="small">2026-05-07 / 9층</span></td>
+              <td>114.62㎡ / 2010년</td>
+              <td>2010년식 대형 면적이 7억 이하.</td>
+              <td>서울 외곽 입지, 출퇴근 시간, 학군 수요 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">7</span></td>
+              <td><span class="tag yellow">대형 가성비</span></td>
+              <td><strong>금천구 시흥동 벽산</strong></td>
+              <td><strong>5.68억</strong><br><span class="small">2026-06-26 / 13층</span></td>
+              <td>114.84㎡ / 2000년</td>
+              <td>서울 5억대 중반에 전용 34평급.</td>
+              <td>단지 노후도, 언덕/교통, 수리비 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">8</span></td>
+              <td><span class="tag">84 안정권</span></td>
+              <td><strong>중랑구 중화동 동양엔파트</strong></td>
+              <td><strong>6.5~6.9억</strong><br><span class="small">2026년 4~5월</span></td>
+              <td>84.10~84.98㎡ / 2010년</td>
+              <td>동북권 2010년식 84㎡ 실거주 후보.</td>
+              <td>역 접근성과 단지 규모 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">9</span></td>
+              <td><span class="tag">강동 84</span></td>
+              <td><strong>강동구 암사동 다성이즈빌</strong></td>
+              <td><strong>6.5억</strong><br><span class="small">2026-05-09 / 7층</span></td>
+              <td>84.91㎡ / 2011년</td>
+              <td>강동구 84㎡가 6억대 중반.</td>
+              <td>소규모·입지·주차 확인.</td>
+            </tr>
+            <tr>
+              <td><span class="rank">10</span></td>
+              <td><span class="tag purple">초대형 구축</span></td>
+              <td><strong>강북구 수유동 극동</strong></td>
+              <td><strong>6.7억</strong><br><span class="small">2026-06-05 / 5층</span></td>
+              <td>134.45㎡ / 1992년</td>
+              <td>서울 6억대에 40평급 대형 면적.</td>
+              <td>구축 수리비와 유동성 리스크 확인.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2>“7억 이하인데 이 정도?” 면적 랭킹</h2>
+      <div class="card">
+        <div class="bar-row"><strong>월계동 대우</strong><div class="bar"><span style="width:100%"></span></div><span>134.64㎡</span></div>
+        <div class="bar-row"><strong>수유동 극동</strong><div class="bar"><span style="width:99%"></span></div><span>134.45㎡</span></div>
+        <div class="bar-row"><strong>돈암동 한신</strong><div class="bar"><span style="width:98%"></span></div><span>132.96㎡</span></div>
+        <div class="bar-row"><strong>구산동 경남아너스빌</strong><div class="bar"><span style="width:91%"></span></div><span>122.77㎡</span></div>
+        <div class="bar-row"><strong>길동 한일시티타워</strong><div class="bar"><span style="width:86%"></span></div><span>116.28㎡</span></div>
+      </div>
+    </section>
+
+    <section class="grid two" id="pick">
+      <div class="card">
+        <span class="tag green">내가 고른 1순위</span>
+        <h2 style="margin-top:12px">강동구 길동 한일시티타워</h2>
+        <p>전용 116.28㎡가 5.95~6.0억으로 여러 번 잡힌 점이 강합니다. 단발성 최저가보다 반복 거래가 더 믿을 만합니다.</p>
+        <p class="small">단, 대단지 아파트가 아닐 수 있으니 단지 규모, 주차, 관리 상태는 꼭 봐야 합니다.</p>
+      </div>
+      <div class="card">
+        <span class="tag red">가장 충격적인 숫자</span>
+        <h2 style="margin-top:12px">월계동 대우 134.64㎡ 5억</h2>
+        <p>서울 안에서 전용 40평급이 5억이라는 건 눈이 번쩍 뜨이는 숫자입니다. 하지만 너무 좋은 숫자는 늘 검증이 먼저입니다.</p>
+        <p class="small">등기, 거래유형, 동·층, 권리관계, 수리비를 확인해야 “기회”인지 “함정”인지 갈립니다.</p>
+      </div>
+    </section>
+
+    <section id="strategy">
+      <h2>예산별 추천 전략</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>예산</th><th>노릴 수 있는 것</th><th>대표 후보</th><th>전략</th></tr></thead>
+          <tbody>
+            <tr><td><strong>4~5억</strong></td><td>서울 84㎡ 일부, 소규모·외곽·구축</td><td>신월동 금하뜨라네, 구로·도봉 일부</td><td>가격은 강하지만 환금성과 관리 상태를 빡세게 확인.</td></tr>
+            <tr><td><strong>5~6억</strong></td><td>100㎡ 이상 대형도 일부 가능</td><td>월계동 대우, 길동 한일시티타워, 시흥동 벽산</td><td>면적 가성비 최강 구간. 출퇴근과 수리비가 승부처.</td></tr>
+            <tr><td><strong>6~7억</strong></td><td>2010년대 84㎡, 동북·서남·강동 일부</td><td>휘경제이스카이, 삼현팰리체, 동양엔파트, 다성이즈빌</td><td>가성비와 환금성의 균형을 노릴 수 있는 메인 구간.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="checklist">
+      <div class="quote">결론: “서울 7억”은 포기 예산이 아닙니다. 단지 규모와 입지를 조금 유연하게 보면, 84㎡는 물론 100㎡ 이상까지도 실거래 후보가 나옵니다.</div>
+      <div class="callout green">
+        <div>🏁</div>
+        <div><strong>최종 픽</strong> 실거주와 면적을 둘 다 노리면 강동구 길동 한일시티타워, 균형형은 동대문구 휘경제이스카이·장안동 삼현팰리체, 절대 가격 가성비는 양천구 신월동 금하뜨라네입니다.</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>계약 전 체크리스트</h2>
+      <div class="card">
+        <div class="check"><div class="box"></div><div><strong>해제·정정·등기 여부</strong><br><span class="small">실거래 신고가 남아 있어도 해제되거나 특수거래일 수 있습니다.</span></div></div>
+        <div class="check"><div class="box"></div><div><strong>단지 규모와 환금성</strong><br><span class="small">소규모 아파트는 싸도 나중에 팔기 어려울 수 있습니다.</span></div></div>
+        <div class="check"><div class="box"></div><div><strong>관리비와 수리비</strong><br><span class="small">대형 구축은 매수가보다 보유비와 수리비가 더 놀라울 수 있습니다.</span></div></div>
+        <div class="check"><div class="box"></div><div><strong>출퇴근 동선</strong><br><span class="small">서울 안이라도 역 접근성과 실제 통근 시간은 완전히 다릅니다.</span></div></div>
+      </div>
+    </section>
+
+    <footer>자료 출처: 사용자가 추가한 realestate-remote MCP의 search_apartment_trades · 서울 25개 구 2026년 4~6월 아파트 매매 실거래 조회 · 가격은 실거래 신고 기준이며 해제·정정·등기 미완료 가능성 확인 필요</footer>
+  </main>
+</body>
+</html>
